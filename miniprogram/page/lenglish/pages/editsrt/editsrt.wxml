@@ -1,0 +1,58 @@
+<view class="container" wx:if="{{!displayDemo}}">
+  <view class="page-body">
+    <form catchsubmit="formSubmit">
+    <view class="page-section tc">
+      <video id="myVideo" src="{{src}}" binderror="videoErrorCallback" show-center-play-btn='{{false}}' show-play-btn="{{true}}" controls></video>
+
+      <view wx:for="{{srtCnEnList}}" wx:for-item="item" wx:key="" class="card" wx:for-index="dirIndex">
+          <block wx:if="{{lang=='cn'}}">
+            <view class="page-section" style="background-color:#f8f8f8;">
+              <view class="page-section-title" style="text-align:right;">{{item.start}}-{{item.end}}</view>
+              <view class="textarea-wrp-1">
+                <textarea  bindblur="bindTextAreaBlur" style="height: 3.8em" value="{{item.cn}}" maxlength='200' data-index="{{ dirIndex }}"/>
+              </view>
+              <view class="textarea-wrp-2" wx:if='{{disabledList[dirIndex]}}'>
+                <textarea style="height: 4.8em" bindblur="bindTextAreaBlur2"  value="{{item.en}}" disabled='true' data-index="{{dirIndex}}" />
+              </view>
+              <view class="textarea-wrp-3" wx:else>
+                <textarea style="height: 4.8em" bindblur="bindTextAreaBlur2"  value="{{item.en}}"  data-index="{{dirIndex}}" focus="{{!disabledList[dirIndex]}}" />
+              </view>
+              <button class="mini-btn" style="margin-top:0rpx; margin-bottom:6rpx;" type="primary" plain="true" size="mini" bindtap="goEdit" data-index="{{dirIndex}}">编辑翻译结果</button>
+            </view>
+          </block>
+          <block wx:else>
+            <view class="page-section" style="background-color:#f8f8f8;">
+            <view class="page-section-title" style="text-align:right;">{{item.start}}-{{item.end}}</view>
+            <view class="textarea-wrp-1">
+              <textarea  bindblur="bindTextAreaBlur" style="height: 4.8em"  value="{{item.en}}" maxlength='200' data-index="{{ dirIndex }}"/>
+            </view>
+            <view class="textarea-wrp-2" wx:if='{{disabledList[dirIndex]}}'>
+              <textarea style="height: 3.8em" bindblur="bindTextAreaBlur2" value="{{item.cn}}" data-index="{{dirIndex}}" disabled='true' />
+            </view>
+            <view class="textarea-wrp-3" wx:else>
+              <textarea style="height: 3.8em" bindblur="bindTextAreaBlur2" value="{{item.cn}}" data-index="{{dirIndex}}" focus="{{!disabledList[dirIndex]}}"/>
+            </view>
+            <button class="mini-btn" style="margin-top:0rpx; margin-bottom:6rpx;" type="primary" plain="true" size="mini" bindtap="goEdit" data-index="{{dirIndex}}">编辑翻译结果</button>
+          </view>
+          </block>
+      </view>
+      <view class="btn-area" style="margin:0px;padding: 0 4rpx;margin-bottom: 40rpx">
+        <button disabled="{{processed}}" class="page-body-button" type="primary" formType="submit">提交字幕</button>
+      </view>
+    </view>
+    </form>
+  </view>
+</view>
+<view class="container" style="margin-top:60rpx;" wx:else>
+  <view class="page-head" style="padding:0rpx;">
+    <view class="page-head-title" style="color:#000;">How to Go to the Maldives</view>
+    <view class="page-head-line"></view>
+  </view>
+  <view class="page-body">
+    <view class="page-section page-section-spacing" style="padding:0 20rpx">
+      <view class="text-box" scroll-y="true" style="text-align:left;background-color:#f8f8f8;">
+        <text>\tThe Maldives is an archipelago in the Indian Ocean made up of 1,190 islands, 200 of which are inhabited. It’s a popular vacation and honeymoon destination, and it’s well known for its turquoise waters and pristine beaches. When traveling to the Maldives, choose to stay on a resort island for a relaxing and picturesque experience, or visit some of the islands inhabited by native Maldivians for a less expensive vacationing option. From snorkeling with bountiful marine life to island hopping, there is plenty to do and enjoy!\n 1. Visit the Maldives from November to April for the best weather.These months make up the dry season in the Maldives, which means the chance for rain interrupting your afternoon at the beach is much lower than during the wet season.Expect to pay more for accommodations and be around more people, as these are the most popular months to travel here.\n2. Arrange to go from May to October for less expensive lodgings.If you are looking for accommodations that are a little more wallet friendly and don’t mind a little rain, book your trip during the wet season months.This is also a great time to travel if you’d prefer a less crowded vacation, as the peak travel time to the Maldives is from November to April.\n3. Obtain a valid passport.If you don’t already have one, fill out a passport application several months before your trip.When you book your flight to the Maldives, you’ll be issued a 30 - day visa automatically.If you want, you can extend that to a 90 - day visa, depending on your travel plans</text>
+      </view>
+    </view>
+  </view>
+</view>

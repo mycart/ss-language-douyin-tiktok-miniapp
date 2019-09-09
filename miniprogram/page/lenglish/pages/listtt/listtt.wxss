@@ -1,0 +1,156 @@
+page {
+    font-size: 14px;
+}
+
+.container {
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-row {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.info-items {
+    margin-left: 30px;
+}
+
+.face {
+    width: 180rpx;
+    height: 180rpx;
+    border-radius: 50%;
+    margin-top: 20px;
+}
+
+.nickname {
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.logout {
+    margin-top: 3px;
+    float: right;
+}
+
+.follow {
+    margin-top: 3px;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: gainsboro;
+    margin-top: 1px;
+}
+
+.container-video {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0rpx;
+    text-align: center;
+    border: solid 1px;
+    line-height: 30px;
+}
+.container-video > view{
+  flex: 1;
+  text-align: center;
+  font-weight:bold;
+}
+
+.video-info {
+    width: 100%;
+}
+
+.video-info-selected {
+    background-color: gainsboro;
+}
+
+.container-video-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.videoImage {
+    width: 246rpx;
+    height: 180px;
+    margin: 2rpx;
+}
+
+video{
+  width: 100%;
+}
+
+.btn-center{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* 播放按钮  */
+.icon-box {
+  position: relative;
+  width: 100rpx;
+  height: 100rpx;
+  left: 72rpx;
+  top: -240rpx;
+}
+
+.icon-play {
+  position: absolute;
+  display: block;
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.icon-trash-box {
+  position: relative;
+  width: 50rpx;
+  height: 50rpx;
+  left: 10rpx;
+  top: -160rpx;
+}
+
+.icon-trash {
+  position: absolute;
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.icon-plus-box {
+  position: relative;
+  width: 50rpx;
+  height: 50rpx;
+  left: 94rpx;
+  top: -214rpx;
+}
+
+.icon-plus {
+  position: absolute;
+  display: block;
+  width: 56rpx;
+  height: 56rpx;
+}
+
+.icon-down-box {
+  position: relative;
+  width: 50rpx;
+  height: 50rpx;
+  left: 184rpx;
+  top: -260rpx;
+}
+
+.icon-down {
+  position: absolute;
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+}

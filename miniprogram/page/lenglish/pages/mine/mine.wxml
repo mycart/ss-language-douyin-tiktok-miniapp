@@ -1,0 +1,41 @@
+<!--index.wxml-->
+<view wx:if="{{loginStatus||!needLogin}}">
+
+  <view class="container">
+    <image src='{{userInfo.avatarUrl}}' class='face'></image>
+    <label class='nickname'>{{ userInfo.nickName }}</label>
+    <!-- 判断是否是自己 -->
+     <!-- <button wx:if="{{needLogin}}" class="mini-btn" type="primary" size="mini" bindtap='uploadVideo'>上传作品</button> -->
+  </view>
+
+  <view class='line'></view>
+  <view class='container-video'>
+    <view class='{{videoSelClass}}{{isSelectdWork}}' bindtap='doSelectWork'>作品列表</view>
+    <view hidden="{{!needLogin}}" class='{{videoSelClass}}{{isSelectdLike}}' bindtap='doSelectWait'>待发布作品</view>
+  </view>
+
+  <view class='container-video-list'></view>
+  <!-- 作品 -->
+  <view hidden='{{myWorkFalg}}'>
+    <block wx:for="{{myVideoList}}" wx:for-item="item" wx:key="" >
+      <image src='{{serverUrl}}{{item.key}}{{imageExt}}' class='videoImage' mode="aspectFill" >
+        <cover-view class='icon-box'>
+          <cover-image class="icon-play" src='/image/play.png' bindtap='showVideo' data-arrindex="{{index}}" ></cover-image>
+        </cover-view>
+      </image>
+    </block>
+  </view>
+  <!-- 待发布作品 -->
+  <view hidden='{{!myWorkFalg}}'>
+    <block wx:for="{{waitVideoList}}" wx:for-item="item" wx:key="" >
+      <image src='{{serverUrl}}{{item.key}}{{imageExt}}' class='videoImage' mode="aspectFill" >
+        <cover-view class='icon-box'>
+          <cover-image class="icon-play" src='/image/play.png' bindtap='editVideo' data-arrindex="{{index}}" ></cover-image>
+        </cover-view>
+      </image>
+    </block>
+  </view>
+</view>
+<view class="btn-center" wx:else>
+    <button type="primary" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" style='width:80%;' wx:if="{{canIUse}}">登录</button>
+</view>

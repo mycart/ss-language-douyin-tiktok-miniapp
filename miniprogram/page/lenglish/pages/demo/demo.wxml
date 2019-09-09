@@ -1,0 +1,13 @@
+<view class="container" style="margin-top:60rpx;">
+  <view class="page-head" style="padding:0rpx;">
+    <view class="page-head-title" style="color:#000;">{{title}}</view>
+    <view class="page-head-line"></view>
+  </view>
+  <view class="page-body">
+    <view class="page-section page-section-spacing" style="padding:0 20rpx">
+      <view class="text-box" scroll-y="true" style="text-align:left;background-color:#f8f8f8;">
+        <text>{{text}}</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "刷刷学外语",
+  "usingComponents": {
+    "wux-popup": "../../../dist/popup/index",
+    "wux-icon": "../../../dist/icon/index"
+  }
+}

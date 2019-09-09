@@ -1,0 +1,278 @@
+/**index.wxss**/
+page {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  background-color: #f8f8f8;
+}
+.container {
+  height: 100vh;
+  width: 100vw;
+}
+.vvideo {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #f8f8f8;
+}
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  height: 128rpx;
+  width: 128rpx;
+}
+.progress {
+  position: absolute;
+  left: 0;
+  bottom: 102rpx;
+  height: 4px;
+  width: 100vw;
+}
+.animation-wrapper {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f8f8f8;
+}
+.animation-image {
+  height: 100vh;
+  width: 100vw;
+  display: block;
+}
+.animationPre {
+  transform: translateY(-100%);
+}
+
+/* 底部区域  */
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  height: 100rpx;
+  bottom: 10rpx;
+  width: 100%;
+}
+
+.icon{
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.icon2 {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.right-icon {
+  margin: 20rpx 20rpx 0rpx;
+}
+
+.text {
+  color: white;
+  width: 100rpx;
+  text-align: center;
+  margin: 0rpx 20rpx;
+}
+
+.share{
+  width: 100rpx;
+  height: 100rpx;
+  background-size: 100rpx 100rpx;
+  background-repeat:no-repeat;
+  background-image:url(data:image/png;base64,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);
+}
+button[plain]{ border:0 }
+
+.home {
+  font-weight: 600;
+  color: #f8f8f8;
+  letter-spacing:16rpx;
+  font-size: 14pt;
+}
+
+.me {
+  font-weight: 600;
+  color: #f8f8f8;
+  letter-spacing:16rpx;
+  font-size: 14pt;
+}
+
+.page-guide{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999;
+  background-color: rgba(22, 23, 24, 0.5);
+}
+
+.page-guide-image{
+  width: 408rpx;
+}
+
+.page-guide-text1{
+  width: 80%;
+  color: #fff;
+  font-size: 14pt;
+  text-align: center;
+}
+
+.page-guide-bottom{
+  width:60%;
+  font-size:30rpx;
+  line-height:72rpx;
+  text-align:center;
+  border-radius:44rpx;
+  border:1px solid #fff;
+  margin:10% auto 0 auto;
+  color:#fff;
+}
+
+/* 右侧区域  */
+.tools {
+  display: flex;
+  position: absolute;
+  z-index: 10000;
+  right: 5rpx;
+  top: 250rpx;
+  height: 300px;
+  flex-direction: column;
+}
+
+/* 头像  */
+.userinfo-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.comments-scoll {
+    height: 1200rpx;
+}
+
+.comments-all {
+    height: 60vh;
+    padding: 12rpx;
+    background-color: #141414;
+    color: #e8e8e8;
+}
+
+.face-comments {
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+}
+.comments-items{
+  margin: 8rpx 0rpx;
+}
+
+.comments-item{
+  display: flex;
+  flex-direction: column;
+}
+
+.container-comments{
+    display: flex;
+    align-items: center;
+}
+
+.nickname-comments {
+    margin-left: 20rpx;
+    font-size: 10pt;
+}
+
+.nickname-lbl{
+    color: #a1a1a1;
+}
+
+.date-lbl{
+    color: #a1a1a1;
+}
+
+.comments-content{
+    text-align: left;
+    margin-left: 90rpx;
+    margin-right: 10rpx;
+    padding-bottom: 4rpx;
+    border-bottom: solid 2rpx #232323;
+    background-color: #141414;
+    font-size: 11pt;
+}
+
+.comments-replaycontent{
+    text-align: left;
+    margin-left: 90rpx;
+    margin-right: 10rpx;
+    padding-bottom: 4rpx;
+    color: #a1a1a1;
+    background-color: #141414;
+    font-size: 10pt;
+    font-style: italic;
+}
+
+/* 评论区 */
+.saySthView {
+    padding: 10rpx;
+    background-color: #141414;
+    line-height: 45px;
+    border-top: solid 1px #232323;
+    color: white;
+    height: 90rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.saySth {
+    font-size: 12pt;
+    text-align: left;
+    margin-left: 10rpx;
+}
+
+.comment-end{
+  width:100%;
+  text-align:center;
+  font-size:10pt;
+  color: #a1a1a1;
+  margin: 20rpx 0rpx;
+}
+
+.comment-start{
+  width:100vw;
+  height: 60rpx;
+  text-align: center;
+  color: white;
+  font-size: 10pt;
+  background: #141414;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close{
+  width: 60rpx;
+  height: 60rpx;
+  position: fixed;
+  right: 30rpx;
+  top: -4rpx;
+}
+
+.lang-version{
+  position: fixed;
+  right: 10rpx;
+  top: 10rpx;
+  font-weight: 400;
+  color: #f8f8f8;
+  font-size: 14pt;
+  font-family: FangSong;
+  opacity:0.5;
+}

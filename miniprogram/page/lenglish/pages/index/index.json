@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "刷视频学外语",
+  "usingComponents": {
+    "wux-popup": "../../../dist/popup/index",
+    "wux-icon": "../../../dist/icon/index",
+    "wux-media": "../../../dist/media/index"
+  }
+}

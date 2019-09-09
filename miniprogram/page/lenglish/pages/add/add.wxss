@@ -1,0 +1,16 @@
+
+.picker{
+  padding: 19rpx 26rpx;
+  background-color: #FFFFFF;
+}
+
+.radio {
+  margin-right: 20rpx;
+}
+
+.btn-center{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

@@ -1,0 +1,29 @@
+{
+  "name": "sslang-demo",
+  "version": "1.0.0",
+  "description": "sslang miniprogram demo",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mycart/ss-language-miniapp.git"
+  },
+  "author": "mycart@126.com",
+  "license": "MIT",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/mycart/ss-language-miniapp/issues"
+  },
+  "homepage": "https://github.com/mycart/ss-language-miniapp#readme",
+  "devDependencies": {
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb-base": "13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.0"
+  },
+  "dependencies": {
+    "wx-server-sdk": "^0.6.1"
+  }
+}

@@ -1,0 +1,43 @@
+<block  wx:if="{{!displayDemo}}">
+<view class="container" wx:if="{{loginStatus}}">
+  <view class="page-body">
+    <view class="page-head">
+      <view class="page-head-desc">选择视频文件，语音需要标准普通话或英文，视频大小30MB以内，时长不超过5分钟，视频格式为mp4/mov，注意不要中断上传与字幕分析的操作过程。</view>
+    </view>
+    <view class="page-section page-section-gap" style="margin-top:50rpx;">
+      <view class="page-section-title">选择视频文件的语种:</view>
+      <radio-group bindchange="radioChange" style="margin-top:30rpx; text-align:center;">
+      <label class="radio" wx:for="{{items}}" wx:key="{{item.value}}">
+        <radio value="{{item.value}}" checked="{{item.checked}}"/>{{item.name}}
+      </label>
+      </radio-group>
+    </view>
+    <view style="margin-top:50rpx;">
+      <button type="primary"  style='width:90%;' bindtap="uploadVideo">上传视频作品</button>
+    </view>
+    <view style="margin-top:50rpx;" wx:if='{{isadmin}}'>
+      <button type="primary"  style='width:90%;' bindtap="choiceVideo">选择视频作品</button>
+    </view>
+  </view>
+  
+</view>
+<view class="btn-center" wx:else>
+    <button type="primary" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" style='width:90%;' wx:if="{{canIUse}}">登录</button>
+</view>
+</block>
+
+<block wx:else>
+<view class="container" style="margin-top:60rpx;" >
+  <view class="page-head" style="padding:0rpx;">
+    <view class="page-head-title" style="color:#000;">How to Be Talented in Multiple Areas</view>
+    <view class="page-head-line"></view>
+  </view>
+  <view class="page-body">
+    <view class="page-section page-section-spacing" style="padding:0 20rpx">
+      <view class="text-box" scroll-y="true" style="text-align:left;background-color:#f8f8f8;">
+        <text>Setting out to increase your talents and abilities in multiple disciplines is an audacious endeavor. It’s also very feasible to accomplish. In fact, it’s far easier to become talented in multiple areas than you may expect. Practicing the skills you wish to improve upon, maintaining a positive mindset, and broadening your base of interest and knowledge can all help you be talented in all sorts of ways.\n 1. Practice.Whatever it is you’re trying to be talented at, you know you have to practice.This is especially true if you hope to be talented in multiple areas.Fortunately, you may not need to practice quite as much as you think, and can likely make the time to practice multiple skills every day.In order to get the most out of the time you put in, you have to focus on what you’re hoping to learn.\n 2. Deconstruct the talents you hope to acquire.In order to practice deliberately and efficiently, you need to make sure you are absolutely focused during practice.One way to help maximize the efficiency of your practice time is to deconstruct the talents you hope to improve upon into specific skills.\n 3. Practice until you can self - correct.Practice enough so that you are able to both notice and correct errors in your execution of a particular ability. (Once you’ve completed a disciplined practice routine, during which you practice almost daily for a month, you will likely reach this point.)\n 4. Be consistent and persistent.Dabbling and practicing are different things.Jogging or painting twice a week are fun and healthy things to do, but in order to acquire talent, you need to be more disciplined in your pursuit of improvement.Something that may help you be persistent is choosing two very different talents to practice and improve upon during the same time period.</text>
+      </view>
+    </view>
+  </view>
+</view>
+</block>

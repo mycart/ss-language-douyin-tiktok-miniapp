@@ -1,0 +1,144 @@
+<view wx:if="{{!displayDemo}}">
+<view class="container" catchtap="changePlayStatus" bindtouchstart="touchStart" bindtouchend="touchEnd" bindtouchcancel="touchCancel">
+  <view class="animation-wrapper" animation="{{animation}}" wx:if="{{!showRowAnim}}" style="z-index:{{czindex}};">
+    <block wx:for="{{videos}}" wx:key="{{item.src}}">
+      <view class="animation-image-wrapper">
+        <image mode="aspectFill" class="animation-image" src="{{item.poster}}"></image>
+      </view>
+    </block>
+  </view>
+  <view class="animation-wrapper" style="display:flex; flex-direction:row; width: 2250rpx; z-index:{{rzindex}};" animation="{{anim}}" wx:if="{{showRowAnim}}">
+      <view class="animation-image-wrapper" style="width:750rpx;">
+        <image mode="aspectFill" class="animation-image" src="{{videos[videoIndex].poster}}"></image>
+      </view>
+      <view class="animation-image-wrapper" style="width:750rpx;">
+        <image mode="aspectFill" class="animation-image" src="{{videos[videoIndex].poster}}"></image>
+      </view>
+      <view class="animation-image-wrapper" style="width:750rpx;">
+        <image mode="aspectFill" class="animation-image" src="{{videos[videoIndex].poster}}"></image>
+      </view>
+  </view>
+  <video class="vvideo" bindtimeupdate="bindtimeupdate" id="kdvideo" binderror="binderror" autoplay="{{autoplay}}" hidden="{{false}}" objectFit="cover" src="{{videos[videoIndex].src}}" bindplay="bindplay" controls="{{controls}}" loop="true" poster="{{videos[videoIndex].poster}}" enable-progress-gesture="{{false}}" show-progress="{{false}}">
+  <cover-view wx:if='{{rowCurrent == 0}}' class="lang-version" style="z-index:9998;">原声版</cover-view>
+  <cover-view wx:if='{{rowCurrent == 1}}' class="lang-version" style="z-index:9998;">配音版</cover-view>
+  <cover-view wx:if='{{rowCurrent == 2}}' class="lang-version" style="z-index:9998;">中英版</cover-view>
+  </video>
+  <!-- 右侧区域  -->
+  <view class="tools">
+    <view>
+      <image class="userinfo-avatar" catchtap="goUserHome" src="{{videos[videoIndex].userInfo.avatarUrl}}" data-openid="{{videos[videoIndex].userInfo.openid}}"></image>
+    </view>
+    <view>
+      <image wx:if="{{videos[videoIndex].like}}" class="icon2 right-icon" src='/image/like_red.png' catchtap='unlike'>取消喜欢</image>
+      <image wx:if="{{!videos[videoIndex].like}}" class="icon2 right-icon" src='/image/like.png' catchtap='like'>喜欢</image>
+    </view>
+    <view>
+      <image class="icon2 right-icon" src='/image/talk.png' catchtap='talk'>评论</image>
+    </view>
+    <view>
+      <button open-type='share' class="share"  plain='true' catchtap="shareMe"></button>
+    </view>
+  </view>
+  <image class="play-btn" wx:if="{{(!playState)||playError}}" src="../../../../image/play.png"></image>
+  <progress class="progress" percent="{{percent}}" activeColor="#ffffff" backgroundColor="#A9A9A9" stroke-width="1"  wx:if="{{true}}" style="z-index:10000;"/>
+
+  <!-- 底部 -->
+  <view class="footer" style="z-index:10000;" wx:if="{{mode == 'index'}}">
+    <view class='home' catchtap="goHome">
+      <view>刷新</view>
+    </view>
+
+    <image class="icon" src='/image/add.png' catchtap='apply'></image>
+
+    <view class='me' catchtap="goMy">
+      <view>我的</view>
+    </view>
+  </view>
+</view>
+
+<view class='page-guide' wx:if="{{isTiptrue}}">
+  <view class="page-guide-wrp" style="height: 100%;flex-direction:column;">
+    <view style="height: 40%; ">
+      <view style="height: 100%;flex-direction:column; display:flex; align-items: center;justify-content: center;">
+          <view>
+            <image src="/image/toleft2.png"  style="width:204rpx;height:218rpx;"></image>
+          </view>
+          <view class="page-guide-text1">
+            向左滑动切换不同语种视频
+          </view>
+      </view>
+    </view>
+    <view style="height: 60%;">
+      <view style="height: 100%;flex-direction:column;display:flex; align-items: center;">
+          <view>
+            <image src="/image/totop2.png" style="width:218rpx;height:204rpx;"></image>
+          </view>
+          <view class="page-guide-text1">
+            向上滑动切换不同视频
+          </view>
+          <view class='page-guide-bottom' bindtap='closeThis'>记住了  我去试试</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<wux-popup position="bottom" visible="{{ commentVisible }}" bind:close="onClose2">
+    
+    <view class='comment-start'>评论列表<view class="close" catchtap="closeTalk"><wux-icon type="ios-close" color="white"/></view></view>
+    <!-- <view class='comments-all'  > -->
+    <scroll-view scroll-y class='comments-all' bindscrolltolower="loadComment">
+      <block wx:for="{{commentsList}}" wx:key="">
+      <view class="comments-items">
+      <view class='comments-item' bindtap='replyFocus' 
+      data-fatherCommentContent="{{item.comment}}" 
+      data-toUserId="{{item.openid}}" 
+      data-toNickName="{{item.nickname}}">
+      <!-- 用户留言回复功能  data-:绑定数据方便获取，
+      fatherCommentContent：留言内容
+      toUserId：给谁回复
+      toNickName：回复那个人的名字
+      -->
+        <view class="container-comments">
+          <image class='face-comments' src='{{item.avatarUrl}}' catchtap="goUser" data-openid='{{item.openid}}'></image>
+          <view class='nickname-comments'>
+            <label class='nickname-lbl'>@{{item.nickname}}</label>
+            <!-- 留言： -->
+            <block wx:if="{{item.toNickName && item.toNickName != null && item.toNickName != ''}}">
+            回复
+            <label class='nickname-lbl'>{{item.toNickName}}</label>
+            </block>
+            <block wx:else>
+            留言
+            </block>
+          </view>
+        </view>
+        <view class='comments-replaycontent' wx:if="{{item.toCommentContent}}">{{item.toCommentContent}}</view>
+        <view class='comments-content'>{{item.comment}}</view>
+      </view>
+      
+      </view>
+      </block>
+      <view wx:if="{{commentEnd}}" class="comment-end">---------无更多数据可加载---------</view>
+    </scroll-view>
+    <!-- </view> -->
+    <!-- 评论框 -->
+    <view class='saySthView'>
+      <!-- 评论内容根据情况进行改变 -->
+      <input name="commentContent" class='saySth' placeholder='{{placeholder}}' confirm-type='send' bindconfirm='saveComment' focus="{{commentFocus}}" value='{{contentValue}}'
+      data-replyCommentContent = '{{replyCommentContent}}'
+      data-replyToOpenId = "{{replyToOpenId}}"
+      data-replyToNickName = "{{replyToNickName}}"
+      ></input>
+    </view>
+    
+</wux-popup>
+</view>
+
+<scroll-view scroll-y style="height: 100%;" bindscrolltoupper="upper" bindscrolltolower="lower" class="page" wx:else >
+    <view class="page__bd">
+      <block wx:for='{{listDemo}}' wx:key=''>
+        <wux-media bindtap='viewDemo' thumb="{{item.thumb}}" thumb-style="border-radius: 50%" title="{{item.title}}" label="{{item.label}}" data-demoindex='{{index}}'></wux-media>
+      </block>
+    </view>
+</scroll-view>

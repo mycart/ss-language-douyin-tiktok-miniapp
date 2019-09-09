@@ -1,0 +1,109 @@
+{
+	"description": "项目配置文件。",
+	"miniprogramRoot": "miniprogram/",
+	"cloudfunctionRoot": "cloudfunctions/",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.7.1",
+	"appid": "wxb3fbbfdaee5d2909",
+	"projectname": "%E5%88%B7%E5%88%B7%E5%AD%A6%E5%A4%96%E8%AF%AD",
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 7,
+			"list": [
+				{
+					"id": -1,
+					"name": "page/lenglish/pages/mine/mine",
+					"pathName": "page/lenglish/pages/mine/mine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "page/lenglish/pages/editsrt/editsrt",
+					"pathName": "page/lenglish/pages/editsrt/editsrt",
+					"query": "id=oGSQd5JET9XpHeVATKMFWJyyCF9g&url=https://7072-prod-llang-1259447440.tcb.qcloud.la/tmp_51b7545375c75411538460ac6ed6a724.mp4&lang=en",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "page/lenglish/pages/demo/demo",
+					"pathName": "page/lenglish/pages/demo/demo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "page/lenglish/pages/editsrt/editsrt",
+					"pathName": "page/lenglish/pages/editsrt/editsrt",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "page/lenglish/pages/viewvideo/viewvideo",
+					"pathName": "page/lenglish/pages/viewvideo/viewvideo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "page/lenglish/pages/mine/mine",
+					"pathName": "page/lenglish/pages/mine/mine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "page/lenglish/pages/listtt/listtt",
+					"pathName": "page/lenglish/pages/listtt/listtt",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "page/lenglish/pages/add/add",
+					"pathName": "page/lenglish/pages/add/add",
+					"scene": null
+				}
+			]
+		}
+	}
+}
