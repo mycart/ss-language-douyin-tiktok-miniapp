@@ -1,4 +1,4 @@
-<view wx:if="{{!displayDemo}}">
+
 <view class="container" catchtap="changePlayStatus" bindtouchstart="touchStart" bindtouchend="touchEnd" bindtouchcancel="touchCancel">
   <view class="animation-wrapper" animation="{{animation}}" wx:if="{{!showRowAnim}}" style="z-index:{{czindex}};">
     <block wx:for="{{videos}}" wx:key="{{item.src}}">
@@ -133,12 +133,4 @@
     </view>
     
 </wux-popup>
-</view>
 
-<scroll-view scroll-y style="height: 100%;" bindscrolltoupper="upper" bindscrolltolower="lower" class="page" wx:else >
-    <view class="page__bd">
-      <block wx:for='{{listDemo}}' wx:key=''>
-        <wux-media bindtap='viewDemo' thumb="{{item.thumb}}" thumb-style="border-radius: 50%" title="{{item.title}}" label="{{item.label}}" data-demoindex='{{index}}'></wux-media>
-      </block>
-    </view>
-</scroll-view>

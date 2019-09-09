@@ -1,4 +1,4 @@
-<block  wx:if="{{!displayDemo}}">
+
 <view class="container" catchtap="changePlayStatus" bindtouchstart="touchStart" bindtouchend="touchEnd" bindtouchcancel="touchCancel">
   <view class="animation-wrapper" animation="{{animation}}" wx:if="{{!showRowAnim}}" style="z-index:{{czindex}};">
     <block wx:for="{{videos}}" wx:key="{{item.src}}">
@@ -133,22 +133,3 @@
     </view>
     
 </wux-popup>
-
-</block>
-
-
-<block wx:else>
-<view class="container" style="margin-top:60rpx;" >
-  <view class="page-head" style="padding:0rpx;">
-    <view class="page-head-title" style="color:#000;">How to Go to the Maldives</view>
-    <view class="page-head-line"></view>
-  </view>
-  <view class="page-body">
-    <view class="page-section page-section-spacing" style="padding:0 20rpx">
-      <view class="text-box" scroll-y="true" style="text-align:left;background-color:#f8f8f8;">
-        <text>\tThe Maldives is an archipelago in the Indian Ocean made up of 1,190 islands, 200 of which are inhabited. It’s a popular vacation and honeymoon destination, and it’s well known for its turquoise waters and pristine beaches. When traveling to the Maldives, choose to stay on a resort island for a relaxing and picturesque experience, or visit some of the islands inhabited by native Maldivians for a less expensive vacationing option. From snorkeling with bountiful marine life to island hopping, there is plenty to do and enjoy!\n 1. Visit the Maldives from November to April for the best weather.These months make up the dry season in the Maldives, which means the chance for rain interrupting your afternoon at the beach is much lower than during the wet season.Expect to pay more for accommodations and be around more people, as these are the most popular months to travel here.\n2. Arrange to go from May to October for less expensive lodgings.If you are looking for accommodations that are a little more wallet friendly and don’t mind a little rain, book your trip during the wet season months.This is also a great time to travel if you’d prefer a less crowded vacation, as the peak travel time to the Maldives is from November to April.\n3. Obtain a valid passport.If you don’t already have one, fill out a passport application several months before your trip.When you book your flight to the Maldives, you’ll be issued a 30 - day visa automatically.If you want, you can extend that to a 90 - day visa, depending on your travel plans</text>
-      </view>
-    </view>
-  </view>
-</view>
-</block>

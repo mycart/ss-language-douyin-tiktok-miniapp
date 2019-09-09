@@ -6,15 +6,6 @@ App({
   onLaunch(opts) {
     console.log('App Launch', opts)
     let that =  this
-    try{
-      sdk.version(function(res){
-        that.globalData.displayDemo = res
-      }, function(res2){
-        console.log('version complete:', res2)
-      })
-    }catch(error){
-      console.log('version error:', error)
-    }
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
@@ -41,7 +32,7 @@ App({
     console.log('App Hide')
   },
   globalData: {
-    displayDemo: true,
+    displayDemo: false,
     hasLogin: false,
     openid: null,
     isadmin: false,

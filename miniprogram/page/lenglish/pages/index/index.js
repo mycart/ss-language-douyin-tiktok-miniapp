@@ -46,52 +46,7 @@ Page({
     commentFocus: true,
     commentEnd: false,
 
-    displayDemo: true,
-    listDemo: [{
-      thumb:'https://media.soso88.org/assets/demo/aid8189693-v4-900px-Go-to-the-Maldives-Step-1.jpg',
-      title:'How to Go to the Maldives',
-      label:'The Maldives is an archipelago in the Indian Ocean made up of 1,190 islands, 200 of which are inhabited. It’s a popular vacation and honeymoon destination, and it’s well known for its turquoise waters and pristine beaches. When traveling to the Maldives, choose to stay on a resort island for a relaxing and picturesque experience, or visit some of the islands inhabited by native Maldivians for a less expensive vacationing option. From snorkeling with bountiful marine life to island hopping, there is plenty to do and enjoy!'
-    }, {
-        thumb: 'https://media.soso88.org/assets/demo/aid2055024-v4-900px-Be-Talented-in-Multiple-Areas-Step-1-Version-2.jpg',
-        title: 'How to Be Talented in Multiple Areas',
-        label: 'Setting out to increase your talents and abilities in multiple disciplines is an audacious endeavor. It’s also very feasible to accomplish. In fact, it’s far easier to become talented in multiple areas than you may expect. Practicing the skills you wish to improve upon, maintaining a positive mindset, and broadening your base of interest and knowledge can all help you be talented in all sorts of ways.'
-      }, {
-        thumb: 'https://media.soso88.org/assets/demo/aid1696342-v4-900px-Reduce-Entertainment-Expenses-Step-1-Version-5.jpg',
-        title: 'How to Reduce Entertainment Expenses',
-        label: 'Spending money on movies, TV, and special events can cost you a surprising amount over time. The average family spends around thousands per year on entertainment, a number that can be greatly reduced by budgeting.[1] Whether you\'re trying to budget at home or while traveling, you can reduce your entertainment expenses if you know where to cut back.Keep track of your budgeting and compare one month from another to see how your spending habits change.'
-      }, {
-        thumb: 'https://media.soso88.org/assets/demo/Support-the-Arts-Step-1-Version-2.jpg',
-        title: 'How to Support the Arts',
-        label: 'The arts allow people to publicly express themselves in fun, creative, and meaningful ways. Art, music, and theatre all provide countless creators, musicians, and entertainers with a livelihood. Without public support and proper funding, though, these mediums may begin fading from local communities. You can help support the arts by providing financial assistance, attending community functions, and petitioning officials from your school and government.'
-      }, {
-        thumb: 'https://media.soso88.org/assets/demo/aid2301691-v4-900px-Read-Ulysses-Step-1.jpg',
-        title: 'How to Read Ulysses',
-        label: 'Come on, it\'s Ulysses.Considered by many to be the second hardest book in the English language(mostly because the hardest book in the English language requires a working knowledge of 8 other languages to read), reading Ulysses is both enjoyable and provocative.Despite its reputation, it\'s not too difficult to read.'
-      }, {
-        thumb: 'https://media.soso88.org/assets/demo/aid1228832-v4-900px-Wear-a-Cosplay-Wig-Step-1-Version-2.jpg',
-        title: 'How to Wear a Cosplay Wig',
-        label: 'Cosplay wigs are worn to make your intended character come to life. Most cosplay wigs are high-quality works of art intended for wear with the same costume for years at a time. Wearing a cosplay wig properly is as simple as remembering to put on a wig cap, putting the wig on properly, and pinning it in place.'
-      }, {
-        thumb: 'https://media.soso88.org/assets/demo/aid33996-v4-900px-Get-a-Singing-Job-Step-20.jpg',
-        title: 'How to Have a Good Stage Presence',
-        label: 'Having a good stage presence is crucial to creating an engaging and lasting performance. While talent and practice are of course essential to any creative performance, nervous body language or unbelievable vocal patterns can kill the energy on stage. Whatever the performance medium, from music to acting to dancing, good stage presence gives the crowd the impression that you are in control and having fun. Most importantly, developing confidence in both your art and your ability to be a good performer will keep the crowd excited and energized throughout the show, and leave them wanting more.'
-      }, {
-        thumb: 'https://media.soso88.org/assets/demo/aid1321078-v4-900px-Get-a-Talent-Agent-Step-1-Version-2.jpg',
-        title: 'How to Get a Talent Agent',
-        label: 'If you are an aspiring musician, actor, or other entertainer, at some point in your career you will need to hire an agent. Your agent will help you build on the work you have already done to book more and better jobs, helping your rise in the field. An agent will also do important paperwork like contracts, so you’ll have more time for perfecting your craft. As you can imagine, finding and hiring an agent is an important decision, and you’ll need to be prepared.'
-      }, {
-        thumb: 'https://media.soso88.org/assets/demo/aid215483-v4-900px-Clap-Your-Hands-Step-1-Version-2.jpg',
-        title: 'How to Clap Your Hands',
-        label: 'It\'s true, babies do it, and well.But clapping is more diverse than you might think.Is it appropriate to clap your hands after the allegro passage in a Mozart concerto ? What about after a sermon in church ? And what\'s the deal with snapping at a poetry reading? Learn to clap the right way.'
-      }, {
-        thumb: 'https://media.soso88.org/assets/demo/aid4992358-v4-900px-Be-a-Knight-Step-1.jpg',
-        title: 'How to Be a Knight',
-        label: 'The classic image of a knight is a soldier who fights the enemies of his lord and king on horseback while upholding the principles of chivalry. Knighthood is thought to date back to the Ordem Equestre, horse-riding nobles of ancient Rome. and other places.[1] The image of the knight, however, comes from the “Song of Roland” and other legends of Charlemagne and his paladins, which spread from France to England with the Norman conquest of 1066. Historically, knighthood could be earned by only a select class of people, but in the last century, several modern ways have arisen to become a knight.'
-      }, {
-        thumb: 'https://media.soso88.org/assets/demo/aid715129-v4-900px-Read-a-Long-Chapter-Book-in-Two-or-Three-Hours-Step-1-Version-2.jpg',
-        title: 'How to Read a Long Chapter Book in Two or Three Hours',
-        label: 'It’s fun to read for pleasure but sometimes you don’t have the ability to choose how much time you get to read a book. If you need to read a book and only have 2 or 3 hours to do so, you can still get through it with some good preparation ahead of time. As you’ll see, preparing to read quickly is just as important as reading itself.'
-      }]
+    displayDemo: false,
   },
   myevent: null,
   onLoad: function (options) {
@@ -171,21 +126,6 @@ Page({
       that.bindEvent()
     }
   
-    that.setData({
-      displayDemo: app.globalData.displayDemo
-    })
-    try {
-      sdk.version(function (res) {
-        app.globalData.displayDemo = res
-        that.setData({
-          displayDemo: res
-        })
-      }, function (res2) {
-        console.log('version complete:', res2)
-      })
-    } catch (error) {
-      console.log('version error:', error)
-    }
   },
   viewDemo(e){
     let demoindex = e.currentTarget.dataset.demoindex
@@ -832,36 +772,6 @@ Page({
       console.log("bottom 2 top", Y);
       bottom2top()
     }
-  },
-  switch2left: function(){
-    let that = this
-    let rowIndex = this.data.rowCurrent
-    rowIndex += 1
-    this.switchVideo(rowIndex)
-    this.setData({
-      animationShow: false,
-      rzindex: -1,
-      playState: true,
-    }, () => {
-      setTimeout(() => {
-        that.vvideo.play()
-      }, 100)
-    })
-  },
-  switch2right: function () {
-    let that = this
-    let rowIndex = this.data.rowCurrent
-    rowIndex -= 1
-    this.switchVideo(rowIndex)
-    this.setData({
-      animationShow: false,
-      rzindex: -1,
-      playState: true,
-    },()=>{
-      setTimeout(() => {
-        that.vvideo.play()
-      }, 100)
-    })
   },
   switchVideo: function (page) {
     let that = this

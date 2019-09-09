@@ -48,9 +48,7 @@ Page({
   },
   myevent: null,
   onLoad: function (options) {
-    this.setData({
-      displayDemo: app.globalData.displayDemo
-    })
+
     // 处理首次使用引导页面的问题
     let firstOpen = wx.getStorageSync("loadOpen")
     console.log("是否首次打开本页面==", firstOpen)
@@ -764,38 +762,6 @@ Page({
       console.log("bottom 2 top", Y);
       bottom2top()
     }
-  },
-  switch2left: function () {
-    let rowIndex = this.data.rowCurrent
-    rowIndex += 1
-    this.switchVideo(rowIndex)
-    this.setData({
-      animationShow: false,
-      rzindex: -1,
-    })
-    let that = this
-    setTimeout(() => {
-      that.vvideo.play()
-      that.setData({
-        playState: true,
-      })
-    }, 100)
-  },
-  switch2right: function () {
-    let rowIndex = this.data.rowCurrent
-    rowIndex -= 1
-    this.switchVideo(rowIndex)
-    this.setData({
-      animationShow: false,
-      rzindex: -1,
-    })
-    let that = this
-    setTimeout(() => {
-      that.vvideo.play()
-      that.setData({
-        playState: true,
-      })
-    }, 100)
   },
   switchVideo: function (page) {
     let that = this

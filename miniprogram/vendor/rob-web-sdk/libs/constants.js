@@ -1,13 +1,11 @@
-var HOST = 'www.soso88.org'
 var HOST_MEDIA = 'media.soso88.org'
-// var HOST = '127.0.0.1:8080'
-// var HOST = "192.168.31.165:8080"
-var PROTOCOL = 'https'
+var HOST = '127.0.0.1:8080'
+var PROTOCOL = 'http'
 
 var constants = {
   // 服务器地址
   HOST,
-  PID: '10001',
+  PID: '10086',
   HOST_MEDIAT_URL: `${PROTOCOL}://${HOST_MEDIA}`,
   OSS_POLICY: `${PROTOCOL}://${HOST}/oss/policy`,
 
