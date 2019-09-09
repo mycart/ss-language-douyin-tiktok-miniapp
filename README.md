@@ -4,7 +4,8 @@
 
 > 提示：请使用微信开发者工具或微信客户端 6.7.2 及以上版本运行。
 
-<img width="200" src="https://media.soso88.org/assets/demo/ss.png">
+![](https://media.soso88.org/assets/demo/ss.png)
+
 
 ## 使用
 
