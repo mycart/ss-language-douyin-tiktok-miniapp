@@ -11,6 +11,17 @@
 
 使用[微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)打开该示例代码。
 
+主要的视频上下左右滑动切换视频的代码位置在：
+
+    /miniprogram/page/lenglish/pages/index/index.js
+    /miniprogram/page/lenglish/pages/viewvideo/viewvideo.js
+
+## 实现原理
+
+1.通过视频的poster图片动画切换，来完成视频切换的动画过程。
+
+2.切换动画后使用CSS的层级关系属性z-index，将视频显示出来，启动播放。这样实现主要防止通过hideen方式或者wx:if方式导致的视频播放黑频闪帧的情况。
+
 dist目录内容使用组件：https://github.com/wux-weapp/wux-weapp
 
 ## 贡献

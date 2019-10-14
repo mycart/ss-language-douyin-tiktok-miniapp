@@ -66,13 +66,14 @@ var checkUploadVideoFile = function (_fileName, _id, callback) {
   request.request(options);
 }
 
-var checkPreSchedVideoFile = function (_id, callback) {
+var checkPreSchedVideoFile = function (_id, _url, callback) {
   let _rd = Math.random()
   var options = {
     method: 'GET',
     url: constants.INDEX_CHECK_SCHED,
     data: {
       id: _id,
+      url: _url,
       type: 'pre',
       rd: _rd
     },
@@ -83,13 +84,14 @@ var checkPreSchedVideoFile = function (_id, callback) {
   request.request(options);
 }
 
-var checkProSchedVideoFile = function (_id, callback) {
+var checkProSchedVideoFile = function (_id, _url, callback) {
   let _rd = Math.random()
   var options = {
     method: 'GET',
     url: constants.INDEX_CHECK_SCHED,
     data: { 
       id: _id,
+      url: _url,
       type:'pro',
       rd:_rd
     },

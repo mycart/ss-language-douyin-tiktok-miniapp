@@ -213,7 +213,7 @@ Page({
   checkSched: function () {
     // 调用接口检查
     var that = this
-    sdk.checkProSchedVideoFile(this.data.openid, function (res) {
+    sdk.checkProSchedVideoFile(this.data.openid, this.data.src, function (res) {
       console.log(res)
       if (res.code == 200) {
         wx.hideLoading()

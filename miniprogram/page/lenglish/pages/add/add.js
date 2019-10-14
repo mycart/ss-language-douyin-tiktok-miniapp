@@ -114,9 +114,9 @@ Page({
     // })
 
     sdk.video2local(function (res) {
-      var file_list = res.fileList
-      if (file_list) {
-        var downloadUrl = file_list[0].tempFileURL
+      //var file_list = res.fileList
+      if (res) {
+        var downloadUrl = res //file_list[0].tempFileURL
         console.log(downloadUrl)
         that.setData({
           url: downloadUrl
@@ -142,7 +142,7 @@ Page({
   checkSched: function() {
     // 调用接口检查
     var that = this
-    sdk.checkPreSchedVideoFile(this.data.openid, function (res) {
+    sdk.checkPreSchedVideoFile(this.data.openid, this.data.url, function (res) {
       console.log(res)
       if (res.code == 200) {
         wx.hideLoading()

@@ -7,9 +7,9 @@ var constants = {
   HOST,
   PID: '10086',
   HOST_MEDIAT_URL: `${PROTOCOL}://${HOST_MEDIA}`,
-  OSS_POLICY: `${PROTOCOL}://${HOST}/oss/policy`,
+  OSS_POLICY: `${PROTOCOL}://${HOST}/trans/sign`,
 
-  //index 
+  //index
   INDEX_LIST_ALL_AV: `${PROTOCOL}://${HOST}/trans/listpidav`,//获取所有平台的视频列表
   INDEX_LIST_PRE_AV: `${PROTOCOL}://${HOST}/trans/listav`,//获取某个用户的未处理的视频列表
   INDEX_LIST_MY_AV: `${PROTOCOL}://${HOST}/trans/listmyav`,//获取某个用户已处理的视频列表

@@ -26,6 +26,10 @@ exports.removeEmptyProperty = function removeEmptyProperty (obj) {
   return obj;
 }
 
+exports.createRandomId = function createRandomId() {
+  return (Math.random() * 10000000).toString(16).substr(0, 4) + '-' + (new Date()).getTime() + '-' + Math.random().toString().substr(2, 5);
+}
+
 // 获取域名后的接口地址
 // 例如 https://request.kdk.igrowiser.com/api/taskexecs/listTaskExecByTeacher
 // 会被截取为 /api/taskexecs/listTaskExecByTeacher

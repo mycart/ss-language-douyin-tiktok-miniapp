@@ -151,12 +151,17 @@ Page({
         this.setData({
           animationShow: false,
           playState: true,
-          czindex: -1,
+          //czindex: -1,
         }, () => {
           // 切换src后，video不能立即播放，settimeout一下
           setTimeout(() => {
             this.vvideo.play()
-          }, 100)
+          }, 50)
+          setTimeout(() => {
+            this.setData({
+              czindex: -1,
+            })
+          }, 150)
         })
       }, 490)
     })
@@ -172,12 +177,17 @@ Page({
         that.setData({
           animationShow: false,
           showRowAnim: false,
-          rzindex: -1,
+          //rzindex: -1,
           playState: true,
         }, () => {
           setTimeout(() => {
             that.vvideo.play()
-          }, 100)
+          }, 50)
+          setTimeout(() => {
+            this.setData({
+              rzindex: -1,
+            })
+          }, 150)
         })
       }, 490)
     })
@@ -662,6 +672,7 @@ Page({
       //that.switch2left()
       
     }, function(){
+      console.log('top2bottom', that.data.rowCurrent)
       console.log('top2bottom', index)
       // 更早地设置 animationShow
       if (index !== 0) {
@@ -672,6 +683,7 @@ Page({
         }, () => {
           console.log('-1 切换')
           that.createAnimation(-1, index).then((res) => {
+            //that.switchVideo(that.data.rowCurrent)
             that.setData({
               animation: that.animation.export(),
               videoIndex: res.index,
@@ -690,6 +702,7 @@ Page({
         })
       }
     }, function(){
+      console.log('bottom2top', that.data.rowCurrent)
       console.log('bottom2top')
       if (index !== (that.data.videos.length - 1)){
         that.setData({
@@ -699,6 +712,7 @@ Page({
         }, () => {
           console.log('+1 切换')
           that.createAnimation(1, index).then((res) => {
+            //that.switchVideo(that.data.rowCurrent)
             that.setData({
               animation: that.animation.export(),
               videoIndex: res.index,

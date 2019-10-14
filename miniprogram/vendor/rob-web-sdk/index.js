@@ -4,6 +4,7 @@ const request = require('./libs/request');
 const index = require('./libs/index');
 const upload = require('./libs/upload');
 const user = require('./libs/user');
+const oss = require('./libs/oss');
 
 
 var exports = module.exports = {
@@ -20,6 +21,7 @@ var exports = module.exports = {
   ...index,
   ...upload,
   ...user,
+  ...oss,
 };
 
 // 导出错误类型码

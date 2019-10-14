@@ -143,12 +143,17 @@ Page({
         this.setData({
           animationShow: false,
           playState: true,
-          czindex: -1,
+          //czindex: -1,
         }, () => {
           // 切换src后，video不能立即播放，settimeout一下
           setTimeout(() => {
             this.vvideo.play()
-          }, 100)
+          }, 50)
+          setTimeout(() => {
+            this.setData({
+              czindex: -1,
+            })
+          }, 150)
         })
       }, 490)
     })
@@ -164,12 +169,17 @@ Page({
         that.setData({
           animationShow: false,
           showRowAnim: false,
-          rzindex: -1,
+          //rzindex: -1,
           playState: true,
         }, () => {
           setTimeout(() => {
             that.vvideo.play()
-          }, 100)
+          }, 50)
+          setTimeout(() => {
+            this.setData({
+              rzindex: -1,
+            })
+          }, 150)
         })
       }, 490)
     })
@@ -663,6 +673,7 @@ Page({
         }, () => {
           console.log('-1 切换')
           that.createAnimation(-1, index).then((res) => {
+            //that.switchVideo(that.data.rowCurrent)
             that.setData({
               animation: that.animation.export(),
               videoIndex: res.index,
@@ -690,6 +701,7 @@ Page({
         }, () => {
           console.log('+1 切换')
           that.createAnimation(1, index).then((res) => {
+            //that.switchVideo(that.data.rowCurrent)
             that.setData({
               animation: that.animation.export(),
               videoIndex: res.index,
